@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>お問合せ｜株式会社フロイデギズモ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; font-family: 'Noto Sans JP', sans-serif; color: #1F2733; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+a { color: #1C2E4A; }
+a:hover { color: #2D5DA8; }
+</style>
+</helmet>
+
+<div style="min-width: 320px">
+  <a href="#main" style="position: absolute; left: -9999px; top: 0; background: #1C2E4A; color: #fff; padding: 10px 18px; z-index: 100; text-decoration: none" style-focus="left: 0">本文へスキップ</a>
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.96); border-bottom: 1px solid #E3E7EE; backdrop-filter: blur(8px)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; flex-wrap: wrap">
+      <a href="top.dc.html" style="text-decoration: none; display: flex; align-items: baseline; gap: 10px">
+        <span style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 20px; color: #1C2E4A; letter-spacing: 0.04em">FREUDE GIZMO</span>
+        <span style="font-size: 11px; color: #6B7280; letter-spacing: 0.06em">株式会社フロイデギズモ</span>
+      </a>
+      <nav aria-label="グローバルナビゲーション" style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap">
+        <a href="services.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">事業内容</a>
+        <a href="works.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">業務実績</a>
+        <a href="recruit.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">採用情報</a>
+        <a href="company.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">会社情報</a>
+        <a href="news.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">お知らせ</a>
+        <a href="contact.dc.html" aria-current="page" style="text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 22px; margin-left: 8px; color: #fff; background: #2D5DA8; border-radius: 4px">お問合せ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div style="background: #EEF1F6; padding: clamp(48px, 7vw, 80px) 24px">
+      <div style="max-width: 1200px; margin: 0 auto">
+        <nav aria-label="パンくずリスト" style="font-size: 12px; color: #6B7280; margin-bottom: 20px">
+          <a href="top.dc.html" style="color: #6B7280; text-decoration: none" style-hover="color: #2D5DA8">TOP</a>
+          <span aria-hidden="true" style="margin: 0 8px">/</span>
+          <span>お問合せ</span>
+        </nav>
+        <p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.24em; color: #2D5DA8; font-weight: 700">CONTACT</p>
+        <h1 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); margin: 0 0 20px; color: #1C2E4A">お問合せ</h1>
+        <p style="max-width: 720px; font-size: 15px; line-height: 2.1; color: #4A5568; margin: 0">Web制作・DX推進・研修のご相談、採用へのご応募は下記フォームよりご連絡ください。2営業日以内にご返信します。</p>
+      </div>
+    </div>
+
+    <section data-screen-label="お問合せフォーム" style="padding: clamp(48px, 7vw, 80px) 24px">
+      <div style="max-width: 720px; margin: 0 auto">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="border: 1px solid #BFD3BE; background: #F2F8F1; border-radius: 8px; padding: 40px 32px; text-align: center">
+            <h2 style="font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; margin: 0 0 14px; color: #2E5D2A">送信が完了しました</h2>
+            <p style="font-size: 14px; line-height: 2; color: #4A5568; margin: 0">お問合せありがとうございます。内容を確認のうえ、2営業日以内にご連絡いたします。<br>（※このフォームはデモです。実装時にサーバー送信を接続します）</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display: grid; gap: 24px">
+            <div style="display: grid; gap: 8px">
+              <label for="f-type" style="font-size: 14px; font-weight: 700; color: #1C2E4A">お問合せ種別 <span style="color: #B4432F; font-size: 12px">必須</span></label>
+              <select id="f-type" required="required" style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; padding: 13px 16px; border: 1px solid #C9D1DC; border-radius: 4px; background: #fff; color: #1F2733" style-focus="border-color: #2D5DA8; outline: 2px solid #C6D7EE">
+                <option value="">選択してください</option>
+                <option value="web">① アクセシビリティ対応のWebサイト制作・ホームページ制作</option>
+                <option value="dx">② 生成AIを活用したDX推進</option>
+                <option value="training">③ 生成AI研修・ITエンジニア育成</option>
+                <option value="recruit">採用について</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div style="display: grid; gap: 8px">
+              <label for="f-name" style="font-size: 14px; font-weight: 700; color: #1C2E4A">お名前 <span style="color: #B4432F; font-size: 12px">必須</span></label>
+              <input id="f-name" type="text" required="required" autocomplete="name" style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; padding: 13px 16px; border: 1px solid #C9D1DC; border-radius: 4px; color: #1F2733" style-focus="border-color: #2D5DA8; outline: 2px solid #C6D7EE">
+            </div>
+            <div style="display: grid; gap: 8px">
+              <label for="f-company" style="font-size: 14px; font-weight: 700; color: #1C2E4A">会社名・団体名</label>
+              <input id="f-company" type="text" autocomplete="organization" style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; padding: 13px 16px; border: 1px solid #C9D1DC; border-radius: 4px; color: #1F2733" style-focus="border-color: #2D5DA8; outline: 2px solid #C6D7EE">
+            </div>
+            <div style="display: grid; gap: 8px">
+              <label for="f-email" style="font-size: 14px; font-weight: 700; color: #1C2E4A">メールアドレス <span style="color: #B4432F; font-size: 12px">必須</span></label>
+              <input id="f-email" type="email" required="required" autocomplete="email" style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; padding: 13px 16px; border: 1px solid #C9D1DC; border-radius: 4px; color: #1F2733" style-focus="border-color: #2D5DA8; outline: 2px solid #C6D7EE">
+            </div>
+            <div style="display: grid; gap: 8px">
+              <label for="f-tel" style="font-size: 14px; font-weight: 700; color: #1C2E4A">電話番号</label>
+              <input id="f-tel" type="tel" autocomplete="tel" style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; padding: 13px 16px; border: 1px solid #C9D1DC; border-radius: 4px; color: #1F2733" style-focus="border-color: #2D5DA8; outline: 2px solid #C6D7EE">
+            </div>
+            <div style="display: grid; gap: 8px">
+              <label for="f-body" style="font-size: 14px; font-weight: 700; color: #1C2E4A">お問合せ内容 <span style="color: #B4432F; font-size: 12px">必須</span></label>
+              <textarea id="f-body" required="required" rows="7" style="font-family: 'Noto Sans JP', sans-serif; font-size: 15px; line-height: 1.9; padding: 13px 16px; border: 1px solid #C9D1DC; border-radius: 4px; color: #1F2733; resize: vertical" style-focus="border-color: #2D5DA8; outline: 2px solid #C6D7EE"></textarea>
+            </div>
+            <p style="font-size: 12px; line-height: 1.9; color: #6B7280; margin: 0">ご入力いただいた個人情報は、お問合せへの回答のみに使用します。</p>
+            <button type="submit" style="font-family: 'Noto Sans JP', sans-serif; font-size: 16px; font-weight: 700; color: #fff; background: #1C2E4A; border: none; border-radius: 4px; padding: 17px 24px; cursor: pointer" style-hover="background: #2D5DA8" style-focus="outline: 3px solid #C6D7EE">この内容で送信する</button>
+          </form>
+        </sc-if>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: #14213A; color: #C9D4E5; padding: 56px 24px 32px">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
+      <div>
+        <p style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 18px; color: #fff; margin: 0 0 12px; letter-spacing: 0.04em">FREUDE GIZMO</p>
+        <p style="font-size: 13px; line-height: 2; margin: 0">株式会社フロイデギズモ<br>生成AIで、地場のDXに伴走する制作会社<br>北九州・福岡</p>
+      </div>
+      <nav aria-label="フッターナビゲーション" style="display: grid; gap: 10px; align-content: start">
+        <a href="services.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">事業内容</a>
+        <a href="works.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">業務実績</a>
+        <a href="recruit.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">採用情報</a>
+        <a href="company.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">会社情報</a>
+        <a href="news.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">お知らせ</a>
+        <a href="contact.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">お問合せ</a>
+      </nav>
+      <div>
+        <p style="font-size: 13px; font-weight: 700; color: #fff; margin: 0 0 12px">フロイデグループ</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 13px">
+          <li>株式会社フロイデ（受託開発）</li>
+          <li>株式会社あいふろいで（障害者雇用・A型）</li>
+          <li>フロイデール（IT教育）</li>
+        </ul>
+      </div>
+    </div>
+    <p style="max-width: 1200px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid #2A3B5C; font-size: 12px; color: #8593A8">© 2026 Freude Gizmo Inc.</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false };
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); window.scrollTo(0, 0); }
+    };
+  }
+}
+</script>
+</body>
+</html>

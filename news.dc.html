@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>お知らせ｜株式会社フロイデギズモ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; font-family: 'Noto Sans JP', sans-serif; color: #1F2733; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+a { color: #1C2E4A; }
+a:hover { color: #2D5DA8; }
+</style>
+</helmet>
+
+<div style="min-width: 320px">
+  <a href="#main" style="position: absolute; left: -9999px; top: 0; background: #1C2E4A; color: #fff; padding: 10px 18px; z-index: 100; text-decoration: none" style-focus="left: 0">本文へスキップ</a>
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.96); border-bottom: 1px solid #E3E7EE; backdrop-filter: blur(8px)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; flex-wrap: wrap">
+      <a href="top.dc.html" style="text-decoration: none; display: flex; align-items: baseline; gap: 10px">
+        <span style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 20px; color: #1C2E4A; letter-spacing: 0.04em">FREUDE GIZMO</span>
+        <span style="font-size: 11px; color: #6B7280; letter-spacing: 0.06em">株式会社フロイデギズモ</span>
+      </a>
+      <nav aria-label="グローバルナビゲーション" style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap">
+        <a href="services.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">事業内容</a>
+        <a href="works.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">業務実績</a>
+        <a href="recruit.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">採用情報</a>
+        <a href="company.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">会社情報</a>
+        <a href="news.dc.html" aria-current="page" style="text-decoration: none; font-size: 14px; font-weight: 700; padding: 8px 12px; color: #2D5DA8">お知らせ</a>
+        <a href="contact.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 22px; margin-left: 8px; color: #fff; background: #1C2E4A; border-radius: 4px" style-hover="background: #2D5DA8; color: #fff">お問合せ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div style="background: #EEF1F6; padding: clamp(48px, 7vw, 80px) 24px">
+      <div style="max-width: 1200px; margin: 0 auto">
+        <nav aria-label="パンくずリスト" style="font-size: 12px; color: #6B7280; margin-bottom: 20px">
+          <a href="top.dc.html" style="color: #6B7280; text-decoration: none" style-hover="color: #2D5DA8">TOP</a>
+          <span aria-hidden="true" style="margin: 0 8px">/</span>
+          <span>お知らせ</span>
+        </nav>
+        <p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.24em; color: #2D5DA8; font-weight: 700">NEWS</p>
+        <h1 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); margin: 0 0 20px; color: #1C2E4A">お知らせ</h1>
+        <p style="max-width: 720px; font-size: 15px; line-height: 2.1; color: #4A5568; margin: 0">実績・技術記事・お知らせを更新しています。※以下はサンプル記事です（公開後はWordPressで運用）。</p>
+      </div>
+    </div>
+
+    <section data-screen-label="お知らせ一覧" style="padding: clamp(48px, 7vw, 72px) 24px">
+      <div style="max-width: 900px; margin: 0 auto">
+        <ul style="list-style: none; margin: 0; padding: 0; border: 1px solid #E3E7EE; border-radius: 8px; background: #fff">
+          <sc-for list="{{ posts }}" as="n" hint-placeholder-count="8">
+            <li style="border-bottom: 1px solid #E3E7EE">
+              <div style="display: flex; gap: 20px; align-items: baseline; padding: 22px 28px; flex-wrap: wrap">
+                <time style="font-size: 13px; color: #9AA5B4; min-width: 92px">{{ n.date }}</time>
+                <span style="font-size: 12px; font-weight: 700; color: #2D5DA8; background: #EAF0F9; padding: 3px 12px; border-radius: 3px; min-width: 56px; text-align: center">{{ n.category }}</span>
+                <span style="font-size: 15px; line-height: 1.9; color: #1F2733; flex: 1; min-width: 220px">{{ n.title }}</span>
+              </div>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: #14213A; color: #C9D4E5; padding: 56px 24px 32px">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
+      <div>
+        <p style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 18px; color: #fff; margin: 0 0 12px; letter-spacing: 0.04em">FREUDE GIZMO</p>
+        <p style="font-size: 13px; line-height: 2; margin: 0">株式会社フロイデギズモ<br>生成AIで、地場のDXに伴走する制作会社<br>北九州・福岡</p>
+      </div>
+      <nav aria-label="フッターナビゲーション" style="display: grid; gap: 10px; align-content: start">
+        <a href="services.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">事業内容</a>
+        <a href="works.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">業務実績</a>
+        <a href="recruit.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">採用情報</a>
+        <a href="company.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">会社情報</a>
+        <a href="news.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">お知らせ</a>
+        <a href="contact.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">お問合せ</a>
+      </nav>
+      <div>
+        <p style="font-size: 13px; font-weight: 700; color: #fff; margin: 0 0 12px">フロイデグループ</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 13px">
+          <li>株式会社フロイデ（受託開発）</li>
+          <li>株式会社あいふろいで（障害者雇用・A型）</li>
+          <li>フロイデール（IT教育）</li>
+        </ul>
+      </div>
+    </div>
+    <p style="max-width: 1200px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid #2A3B5C; font-size: 12px; color: #8593A8">© 2026 Freude Gizmo Inc.</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      posts: [
+        { date: "2026.06.01", category: "お知らせ", title: "コーポレートサイトをリニューアルしました" },
+        { date: "2026.05.20", category: "技術記事", title: "生成AI×アクセシビリティ試験の社内プロセスを公開します" },
+        { date: "2026.05.12", category: "実績", title: "自治体サイトのWCAG 2.1 AA準拠対応を支援しました" },
+        { date: "2026.04.24", category: "技術記事", title: "PA11y-CI／axe-coreをCIに組み込む実装パターン" },
+        { date: "2026.04.10", category: "実績", title: "地場製造業の見積業務を生成AIで70%短縮した取り組み" },
+        { date: "2026.03.18", category: "お知らせ", title: "生成AI研修・ITエンジニア育成事業の準備を開始しました" },
+        { date: "2026.03.02", category: "技術記事", title: "障害当事者テストで見つかる「ツールでは検出できない」問題" },
+        { date: "2026.02.14", category: "お知らせ", title: "北九州市内の企業向けDX相談会に登壇しました" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

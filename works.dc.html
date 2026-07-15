@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>業務実績｜株式会社フロイデギズモ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; font-family: 'Noto Sans JP', sans-serif; color: #1F2733; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+a { color: #1C2E4A; }
+a:hover { color: #2D5DA8; }
+</style>
+</helmet>
+
+<div style="min-width: 320px">
+  <a href="#main" style="position: absolute; left: -9999px; top: 0; background: #1C2E4A; color: #fff; padding: 10px 18px; z-index: 100; text-decoration: none" style-focus="left: 0">本文へスキップ</a>
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.96); border-bottom: 1px solid #E3E7EE; backdrop-filter: blur(8px)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; flex-wrap: wrap">
+      <a href="top.dc.html" style="text-decoration: none; display: flex; align-items: baseline; gap: 10px">
+        <span style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 20px; color: #1C2E4A; letter-spacing: 0.04em">FREUDE GIZMO</span>
+        <span style="font-size: 11px; color: #6B7280; letter-spacing: 0.06em">株式会社フロイデギズモ</span>
+      </a>
+      <nav aria-label="グローバルナビゲーション" style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap">
+        <a href="services.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">事業内容</a>
+        <a href="works.dc.html" aria-current="page" style="text-decoration: none; font-size: 14px; font-weight: 700; padding: 8px 12px; color: #2D5DA8">業務実績</a>
+        <a href="recruit.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">採用情報</a>
+        <a href="company.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">会社情報</a>
+        <a href="news.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">お知らせ</a>
+        <a href="contact.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 22px; margin-left: 8px; color: #fff; background: #1C2E4A; border-radius: 4px" style-hover="background: #2D5DA8; color: #fff">お問合せ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div style="background: #EEF1F6; padding: clamp(48px, 7vw, 80px) 24px">
+      <div style="max-width: 1200px; margin: 0 auto">
+        <nav aria-label="パンくずリスト" style="font-size: 12px; color: #6B7280; margin-bottom: 20px">
+          <a href="top.dc.html" style="color: #6B7280; text-decoration: none" style-hover="color: #2D5DA8">TOP</a>
+          <span aria-hidden="true" style="margin: 0 8px">/</span>
+          <span>業務実績</span>
+        </nav>
+        <p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.24em; color: #2D5DA8; font-weight: 700">WORKS</p>
+        <h1 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); margin: 0 0 20px; color: #1C2E4A">業務実績</h1>
+        <p style="max-width: 720px; font-size: 15px; line-height: 2.1; color: #4A5568; margin: 0">課題・解決・成果の3点で、私たちの仕事をご紹介します。※以下は構成確認用のサンプルデータです。</p>
+      </div>
+    </div>
+
+    <section data-screen-label="実績一覧" style="padding: clamp(48px, 7vw, 72px) 24px">
+      <div style="max-width: 1200px; margin: 0 auto">
+        <div role="group" aria-label="業界で絞り込み" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px">
+          <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+            <button onClick="{{ f.select }}" aria-pressed="{{ f.active }}" style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: {{ f.weight }}; cursor: pointer; padding: 9px 20px; border-radius: 100px; border: 1px solid {{ f.border }}; background: {{ f.bg }}; color: {{ f.color }}" style-hover="border-color: #2D5DA8">{{ f.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px">
+          <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
+            <article style="border: 1px solid #E3E7EE; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; background: #fff">
+              <div style="background: #DDE3EC; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #8593A8; font-size: 13px; letter-spacing: 0.1em">IMAGE</div>
+              <div style="padding: 28px; display: flex; flex-direction: column; gap: 14px; flex: 1">
+                <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                  <span style="font-size: 12px; font-weight: 700; color: #2D5DA8; background: #EAF0F9; padding: 4px 12px; border-radius: 3px">{{ w.industry }}</span>
+                  <span style="font-size: 12px; color: #6B7280; background: #F3F4F6; padding: 4px 12px; border-radius: 3px">{{ w.service }}</span>
+                </div>
+                <h2 style="font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; line-height: 1.7; margin: 0; color: #1C2E4A">{{ w.title }}</h2>
+                <dl style="margin: 0; display: grid; gap: 12px; font-size: 13px">
+                  <div>
+                    <dt style="font-weight: 700; color: #1C2E4A; margin-bottom: 4px">課題</dt>
+                    <dd style="margin: 0; line-height: 1.9; color: #4A5568">{{ w.problem }}</dd>
+                  </div>
+                  <div>
+                    <dt style="font-weight: 700; color: #1C2E4A; margin-bottom: 4px">解決</dt>
+                    <dd style="margin: 0; line-height: 1.9; color: #4A5568">{{ w.solution }}</dd>
+                  </div>
+                  <div style="background: #F6F8FB; border-radius: 6px; padding: 14px 16px">
+                    <dt style="font-weight: 700; color: #2D5DA8; margin-bottom: 4px">成果</dt>
+                    <dd style="margin: 0; line-height: 1.9; color: #1F2733; font-weight: 500">{{ w.result }}</dd>
+                  </div>
+                </dl>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="取引先" style="background: #EEF1F6; padding: clamp(48px, 7vw, 72px) 24px">
+      <div style="max-width: 1200px; margin: 0 auto; text-align: center">
+        <h2 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 26px); margin: 0 0 8px; color: #1C2E4A">取引実績</h2>
+        <p style="font-size: 13px; color: #6B7280; margin: 0 0 36px">※サンプル表記です</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px">
+          <sc-for list="{{ logos }}" as="l" hint-placeholder-count="6">
+            <div style="background: #fff; border-radius: 6px; padding: 24px 12px; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif JP', serif; font-size: 14px; font-weight: 600; color: #8593A8; letter-spacing: 0.06em">{{ l }}</div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #1C2E4A; color: #fff; padding: clamp(48px, 7vw, 72px) 24px; text-align: center">
+      <div style="max-width: 720px; margin: 0 auto">
+        <h2 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 30px); line-height: 1.6; margin: 0 0 28px">類似業界での実績について、<br>詳しくお話しできます。</h2>
+        <a href="contact.dc.html" style="display: inline-block; text-decoration: none; background: #fff; color: #1C2E4A; font-weight: 700; font-size: 15px; padding: 15px 44px; border-radius: 4px" style-hover="background: #DCE5F2; color: #1C2E4A">お問合せフォームへ</a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: #14213A; color: #C9D4E5; padding: 56px 24px 32px">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
+      <div>
+        <p style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 18px; color: #fff; margin: 0 0 12px; letter-spacing: 0.04em">FREUDE GIZMO</p>
+        <p style="font-size: 13px; line-height: 2; margin: 0">株式会社フロイデギズモ<br>生成AIで、地場のDXに伴走する制作会社<br>北九州・福岡</p>
+      </div>
+      <nav aria-label="フッターナビゲーション" style="display: grid; gap: 10px; align-content: start">
+        <a href="services.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">事業内容</a>
+        <a href="works.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">業務実績</a>
+        <a href="recruit.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">採用情報</a>
+        <a href="company.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">会社情報</a>
+        <a href="news.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">お知らせ</a>
+        <a href="contact.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">お問合せ</a>
+      </nav>
+      <div>
+        <p style="font-size: 13px; font-weight: 700; color: #fff; margin: 0 0 12px">フロイデグループ</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 13px">
+          <li>株式会社フロイデ（受託開発）</li>
+          <li>株式会社あいふろいで（障害者雇用・A型）</li>
+          <li>フロイデール（IT教育）</li>
+        </ul>
+      </div>
+    </div>
+    <p style="max-width: 1200px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid #2A3B5C; font-size: 12px; color: #8593A8">© 2026 Freude Gizmo Inc.</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: "すべて" };
+
+  works() {
+    return [
+      { industry: "行政・自治体", service: "Web制作", title: "自治体公式サイトのWCAG 2.1 AA準拠リニューアル", problem: "改正障害者差別解消法対応が急務。既存サイトはalt欠落・コントラスト不足など指摘事項が多数。", solution: "全ページをWCAG 2.1 AA前提で再設計。障害当事者試験チームが全テンプレートを実利用検証。", result: "適合性試験に合格し、試験結果を住民向けに公開。問合せフォーム利用率が1.8倍に。" },
+      { industry: "製造業", service: "DX推進", title: "地場製造業の見積業務を生成AIで70%短縮", problem: "ベテラン2名に依存する見積作成が受注のボトルネック。1件あたり平均4時間。", solution: "過去見積データを構造化し、Claudeによるドラフト生成フローを構築。営業部門へ導入研修を実施。", result: "見積作成時間を平均70分に短縮。月間対応可能件数が2.5倍になり、失注率が低下。" },
+      { industry: "医療・福祉", service: "Web制作", title: "医療法人グループ6サイトの統合リニューアル", problem: "病院・施設ごとにサイトが分散し、更新も業者もバラバラ。採用応募が年々減少。", solution: "情報設計を統合しWordPressで一元管理。アクセシビリティ対応と採用コンテンツを強化。", result: "運用コストを年40%削減。看護職の応募数が前年比2.1倍に増加。" },
+      { industry: "小売・サービス", service: "DX推進", title: "地域小売チェーンの問合せ対応を生成AIで半自動化", problem: "店舗への電話問合せが集中し、繁忙期は機会損失が発生。FAQも更新されず形骸化。", solution: "問合せログを分析してFAQを再構築。生成AIによる一次回答ドラフトの仕組みを導入。", result: "電話問合せ件数を35%削減。回答までの平均時間が1営業日から2時間に。" },
+      { industry: "行政・自治体", service: "Web制作", title: "外郭団体サイトの情報構造再設計と性能改善", problem: "ページ表示に10秒以上。検索流入がほぼゼロで、事業案内が届いていない。", solution: "プリレンダリング導入とJS削減で高速化。schema.org構造化データを実装。", result: "LCPを11秒から2.1秒に改善。公開3か月で自然検索流入が4.6倍に。" },
+      { industry: "教育", service: "研修・育成", title: "専門学校向け 生成AI活用研修の設計・実施", problem: "教職員の生成AI理解にばらつきがあり、授業活用の方針を立てられない。", solution: "職種別の3段階研修を設計。実際の校務データを使ったハンズオンを実施。", result: "受講者の92%が「業務で使い始めた」と回答。校務文書作成時間が平均40%減。" }
+    ];
+  }
+
+  renderVals() {
+    const cats = ["すべて", "行政・自治体", "製造業", "医療・福祉", "小売・サービス", "教育"];
+    const cur = this.state.filter;
+    return {
+      filters: cats.map((label) => ({
+        label,
+        active: cur === label,
+        weight: cur === label ? 700 : 500,
+        bg: cur === label ? "#1C2E4A" : "#fff",
+        color: cur === label ? "#fff" : "#4A5568",
+        border: cur === label ? "#1C2E4A" : "#D4DAE3",
+        select: () => this.setState({ filter: label })
+      })),
+      works: this.works().filter((w) => cur === "すべて" || w.industry === cur)
+    };
+  }
+}
+</script>
+</body>
+</html>

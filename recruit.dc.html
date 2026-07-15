@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<title>採用情報｜株式会社フロイデギズモ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; font-family: 'Noto Sans JP', sans-serif; color: #1F2733; background: #FFFFFF; -webkit-font-smoothing: antialiased; }
+a { color: #1C2E4A; }
+a:hover { color: #2D5DA8; }
+</style>
+</helmet>
+
+<div style="min-width: 320px">
+  <a href="#main" style="position: absolute; left: -9999px; top: 0; background: #1C2E4A; color: #fff; padding: 10px 18px; z-index: 100; text-decoration: none" style-focus="left: 0">本文へスキップ</a>
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.96); border-bottom: 1px solid #E3E7EE; backdrop-filter: blur(8px)">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; flex-wrap: wrap">
+      <a href="top.dc.html" style="text-decoration: none; display: flex; align-items: baseline; gap: 10px">
+        <span style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 20px; color: #1C2E4A; letter-spacing: 0.04em">FREUDE GIZMO</span>
+        <span style="font-size: 11px; color: #6B7280; letter-spacing: 0.06em">株式会社フロイデギズモ</span>
+      </a>
+      <nav aria-label="グローバルナビゲーション" style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap">
+        <a href="services.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">事業内容</a>
+        <a href="works.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">業務実績</a>
+        <a href="recruit.dc.html" aria-current="page" style="text-decoration: none; font-size: 14px; font-weight: 700; padding: 8px 12px; color: #2D5DA8">採用情報</a>
+        <a href="company.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">会社情報</a>
+        <a href="news.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; color: #1F2733" style-hover="color: #2D5DA8">お知らせ</a>
+        <a href="contact.dc.html" style="text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 22px; margin-left: 8px; color: #fff; background: #1C2E4A; border-radius: 4px" style-hover="background: #2D5DA8; color: #fff">お問合せ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div style="background: #EEF1F6; padding: clamp(48px, 7vw, 80px) 24px">
+      <div style="max-width: 1200px; margin: 0 auto">
+        <nav aria-label="パンくずリスト" style="font-size: 12px; color: #6B7280; margin-bottom: 20px">
+          <a href="top.dc.html" style="color: #6B7280; text-decoration: none" style-hover="color: #2D5DA8">TOP</a>
+          <span aria-hidden="true" style="margin: 0 8px">/</span>
+          <span>採用情報</span>
+        </nav>
+        <p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.24em; color: #2D5DA8; font-weight: 700">RECRUIT</p>
+        <h1 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(28px, 4vw, 44px); margin: 0 0 20px; color: #1C2E4A">採用情報</h1>
+        <p style="max-width: 720px; font-size: 15px; line-height: 2.1; color: #4A5568; margin: 0">無職・フリーター1,000人をエンジニアに——。この目標に、つくる側として参加しませんか。生成AIとアクセシビリティを武器に、地域の仕事を変えていく仲間を募集しています。</p>
+      </div>
+    </div>
+
+    <section data-screen-label="募集職種" style="padding: clamp(56px, 8vw, 88px) 24px">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <h2 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 30px); margin: 0 0 40px; color: #1C2E4A">募集職種</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+          <sc-for list="{{ jobs }}" as="j" hint-placeholder-count="3">
+            <article style="border: 1px solid #E3E7EE; border-radius: 8px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+              <h3 style="font-family: 'Noto Serif JP', serif; font-size: 19px; font-weight: 700; margin: 0; color: #1C2E4A">{{ j.title }}</h3>
+              <p style="font-size: 14px; line-height: 2; color: #4A5568; margin: 0; flex: 1">{{ j.body }}</p>
+              <p style="font-size: 13px; color: #6B7280; margin: 0">雇用形態：{{ j.type }}／勤務地：{{ j.location }}</p>
+              <a href="contact.dc.html" style="justify-self: start; align-self: start; text-decoration: none; font-size: 13px; font-weight: 700; color: #1C2E4A; border: 1px solid #1C2E4A; padding: 10px 26px; border-radius: 4px" style-hover="background: #EAF0F9; color: #1C2E4A">応募・問合せ</a>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="働く環境" style="background: #EEF1F6; padding: clamp(56px, 8vw, 88px) 24px">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <h2 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 30px); margin: 0 0 40px; color: #1C2E4A">働く環境</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+          <div style="background: #fff; border-radius: 6px; padding: 28px">
+            <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 10px; color: #1C2E4A">生成AIを毎日の実装で使う</h3>
+            <p style="font-size: 13px; line-height: 1.9; color: #4A5568; margin: 0">Claude Code等を組み込んだ制作プロセスが標準。AIに任せる部分と人が担う部分を、実案件で学べます。</p>
+          </div>
+          <div style="background: #fff; border-radius: 6px; padding: 28px">
+            <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 10px; color: #1C2E4A">アクセシビリティが当たり前</h3>
+            <p style="font-size: 13px; line-height: 1.9; color: #4A5568; margin: 0">WCAG 2.2 AAを前提とした設計・実装と、障害当事者との協働。市場価値の高い専門性が身につきます。</p>
+          </div>
+          <div style="background: #fff; border-radius: 6px; padding: 28px">
+            <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 10px; color: #1C2E4A">地場で完結するやりがい</h3>
+            <p style="font-size: 13px; line-height: 1.9; color: #4A5568; margin: 0">クライアントは北九州・福岡の企業と行政。成果が地域に見える距離感で働けます。</p>
+          </div>
+          <div style="background: #fff; border-radius: 6px; padding: 28px">
+            <h3 style="font-size: 16px; font-weight: 700; margin: 0 0 10px; color: #1C2E4A">グループの育成基盤</h3>
+            <p style="font-size: 13px; line-height: 1.9; color: #4A5568; margin: 0">フロイデール等の教育事業と連携した研修制度。未経験・第二新卒からの成長事例が多数あります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="技術スタック" style="padding: clamp(56px, 8vw, 88px) 24px">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <h2 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 30px); margin: 0 0 32px; color: #1C2E4A">技術スタック</h2>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+          <sc-for list="{{ stack }}" as="t" hint-placeholder-count="10">
+            <span style="font-size: 13px; color: #1C2E4A; background: #EAF0F9; padding: 8px 18px; border-radius: 100px">{{ t }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="メンバー" style="background: #EEF1F6; padding: clamp(56px, 8vw, 88px) 24px">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <h2 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 30px); margin: 0 0 8px; color: #1C2E4A">働くメンバー</h2>
+        <p style="font-size: 13px; color: #6B7280; margin: 0 0 40px">※現行サイトの画像・テキストを流用予定（以下はプレースホルダー）</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+          <sc-for list="{{ members }}" as="m" hint-placeholder-count="3">
+            <article style="background: #fff; border-radius: 8px; overflow: hidden">
+              <div style="background: #DDE3EC; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #8593A8; font-size: 13px; letter-spacing: 0.1em">MEMBER PHOTO</div>
+              <div style="padding: 24px 28px">
+                <p style="font-size: 12px; font-weight: 700; color: #2D5DA8; margin: 0 0 6px">{{ m.role }}</p>
+                <h3 style="font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 700; margin: 0 0 10px; color: #1C2E4A">{{ m.name }}</h3>
+                <p style="font-size: 13px; line-height: 1.9; color: #4A5568; margin: 0">{{ m.body }}</p>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #1C2E4A; color: #fff; padding: clamp(48px, 7vw, 72px) 24px; text-align: center">
+      <div style="max-width: 720px; margin: 0 auto">
+        <h2 style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 30px); line-height: 1.6; margin: 0 0 16px">カジュアル面談から、どうぞ。</h2>
+        <p style="font-size: 14px; line-height: 2; color: #C9D4E5; margin: 0 0 32px">履歴書の前に、まずは話を聞いてみたいという方も歓迎します。</p>
+        <a href="contact.dc.html" style="display: inline-block; text-decoration: none; background: #fff; color: #1C2E4A; font-weight: 700; font-size: 15px; padding: 15px 44px; border-radius: 4px" style-hover="background: #DCE5F2; color: #1C2E4A">応募・問合せフォームへ</a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: #14213A; color: #C9D4E5; padding: 56px 24px 32px">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px">
+      <div>
+        <p style="font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 18px; color: #fff; margin: 0 0 12px; letter-spacing: 0.04em">FREUDE GIZMO</p>
+        <p style="font-size: 13px; line-height: 2; margin: 0">株式会社フロイデギズモ<br>生成AIで、地場のDXに伴走する制作会社<br>北九州・福岡</p>
+      </div>
+      <nav aria-label="フッターナビゲーション" style="display: grid; gap: 10px; align-content: start">
+        <a href="services.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">事業内容</a>
+        <a href="works.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">業務実績</a>
+        <a href="recruit.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">採用情報</a>
+        <a href="company.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">会社情報</a>
+        <a href="news.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">お知らせ</a>
+        <a href="contact.dc.html" style="color: #C9D4E5; text-decoration: none; font-size: 13px" style-hover="color: #fff">お問合せ</a>
+      </nav>
+      <div>
+        <p style="font-size: 13px; font-weight: 700; color: #fff; margin: 0 0 12px">フロイデグループ</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 13px">
+          <li>株式会社フロイデ（受託開発）</li>
+          <li>株式会社あいふろいで（障害者雇用・A型）</li>
+          <li>フロイデール（IT教育）</li>
+        </ul>
+      </div>
+    </div>
+    <p style="max-width: 1200px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid #2A3B5C; font-size: 12px; color: #8593A8">© 2026 Freude Gizmo Inc.</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      jobs: [
+        { title: "Webエンジニア（フロントエンド）", body: "WCAG 2.2 AA準拠のWebサイト実装を担当。生成AIを組み込んだ制作フローで、セマンティックなHTML/CSS/JSを書きます。", type: "正社員", location: "北九州（リモート併用）" },
+        { title: "Webディレクター", body: "行政・地場企業案件の要件整理・情報設計・進行管理を担当。クライアントのKPIに踏み込む提案が仕事です。", type: "正社員", location: "北九州（リモート併用）" },
+        { title: "アクセシビリティエンジニア", body: "自動検証（PA11y-CI／axe-core）の運用と、あいふろいで試験チームとの協働による品質保証を担当します。", type: "正社員・契約社員", location: "北九州（リモート併用)" }
+      ],
+      stack: ["HTML / CSS / JavaScript", "WordPress", "PHP", "Claude / Claude Code", "PA11y-CI", "axe-core", "GitHub Actions", "Figma", "Playwright", "Xserver"],
+      members: [
+        { role: "エンジニア", name: "山田 太郎（ダミー）", body: "未経験からフロイデールで学び、入社3年目。現在は自治体案件のフロント実装を担当しています。" },
+        { role: "ディレクター", name: "鈴木 花子（ダミー）", body: "東京の制作会社から地元へUターン。地場企業のDX案件で要件整理から伴走しています。" },
+        { role: "アクセシビリティテスター", name: "佐藤 次郎（ダミー）", body: "あいふろいで所属。スクリーンリーダーユーザーとして、納品前の実利用試験を担当しています。" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
